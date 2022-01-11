@@ -1,9 +1,23 @@
 import React from 'react'
-import { useState } from 'react/cjs/react.development'
+import { useEffect, useState } from 'react/cjs/react.development'
 
 const App = props => {
   const [state, setState] = useState(props)
   const { name, price } = state
+
+  useEffect(() => {
+    console.log('This is like componentDidMount or componentDidUpdate')
+  })
+
+  useEffect(() => {
+    // 一度だけ呼ばれる場合
+    console.log('This is like componentDidMount')
+  }, [])
+
+  useEffect(() => {
+    // 特定の要素が変更された時にのみ呼ばれる場合
+    console.log('This callback is for name only.')
+  }, [name])
 
   return (
     <>
