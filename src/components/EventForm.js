@@ -47,7 +47,7 @@ const EventForm = () => {
                 </div>
 
                 <button className="btn btn-primary col-auto mr-2" onClick={addEvent} disabled={unCreatable}>Submit</button>
-                <button className="btn btn-danger col-auto" onClick={deleteAllEvents} disabled={state.length === 0}>Delete all events</button>
+                <button className="btn btn-danger col-auto" onClick={deleteAllEvents} disabled={state.events.length === 0}>Delete all events</button>
             </form>
         </>
     )
